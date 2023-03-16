@@ -1,0 +1,3978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottomSheetLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    tools:ignore="HardcodedText, RtlSymmetry, TooManyViews, UseCompoundDrawables, ContentDescription">
+
+    <LinearLayout
+        android:id="@+id/patient_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_bg_2"
+        android:backgroundTint="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/patient_profile_picture_triage"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/patient_info_text_bottom_sheet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="3"
+            android:textColor="@color/colorPrimaryDark"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_bg_2"
+        android:backgroundTint="@color/white"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/section_one">
+                <TextView
+                    android:id="@+id/section_one_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Airway and Breathing"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="23sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Appears Obstructed or Central Cyanosis or Severe respiratory distress"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:layout_marginTop="15dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/section_prompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/section_prompt_imageview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/section_prompt_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Check for obstruction (noisy breathing), slow breathing, wheezing, chocking, not able to speak"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/section_prompt_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/section_prompt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/section_prompt1_imageview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/section_prompt1_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Check pupils"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/section_prompt1_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/action_prompt4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt4_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Check oxygen saturation"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt4_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/label_prompt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="If Obstructed airway"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="15dp"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Is there a foreign body aspiration?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_group_bg"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <RadioButton
+                            android:id="@+id/radio1_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            style="@style/RadioButtonStyle"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="1,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio1_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="1,1"
+                            android:text="NO"
+                            />
+
+                        <RadioButton
+                            android:id="@+id/radio1_not"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            style="@style/RadioButtonStyle"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="1,3"
+                            android:text="N/A"
+                            />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt1_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Treat choking patient"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt1_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <TableRow
+                    android:id="@+id/row2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Do you suspect anaphylaxis?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_group_bg"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <RadioButton
+                            android:id="@+id/radio2_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_states_bg"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:padding="5dp"
+                            android:tag="2,2"
+                            android:text="YES"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="10sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio2_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_states_bg"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:padding="5dp"
+                            android:tag="2,1"
+                            android:text="NO"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="10sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio2_not"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_states_bg"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:padding="5dp"
+                            android:tag="2,3"
+                            android:text="N/A"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="10sp" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt2_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give 1:1000 epinephrine (adrenaline) IM – 0.5 ml if 50 kg or above, 0.4 ml if 40 kg, 0.3 if 30 kg"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt2_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt3_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Manage airway"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt3_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt16_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Give 5 litres of oxygen (10-15 litres/min if critically ill"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt16_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row52"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Is she pregnant"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio52_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="25,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio52_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="25,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio52_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="25,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt7_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Help patient assume position of comfort"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt7_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Does Patient have inadequate breathing?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/radio_group_bg"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <RadioButton
+                            android:id="@+id/radio5_yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_states_bg"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:padding="5dp"
+                            android:tag="5,2"
+                            android:text="YES"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="10sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio5_no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_states_bg"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:padding="5dp"
+                            android:tag="5,1"
+                            android:text="NO"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="10sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio5_not"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/radio_states_bg"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:padding="5dp"
+                            android:tag="5,3"
+                            android:text="N/A"
+                            android:textColor="@drawable/radio_text"
+                            android:textSize="10sp" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt5_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Assist Ventilation with bag valve mask"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt5_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line5"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Does Patient have slow breathing with small pupils?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio6_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="6,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio6_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="6,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio6_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="6,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt6_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give naloxone for opiate overdose"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt6_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line6"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Is Patient wheezing?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio8_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="8,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio8_no"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="8,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio8_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="8,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt8_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give salbutamol"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt8_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line8"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/section_two">
+                <TextView
+                    android:id="@+id/section_two_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Circulation (Shock or Heavy Bleeding)"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="23sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/label2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Weak or fast pulse or Capillary refill longer than three seconds or Heavy bleeding from any siteor Severe trauma"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/section_prompt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/section_prompt2_imageview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/section_prompt2_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Check SBP and Pulse"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <CheckBox
+                            android:id="@+id/section_prompt2_checkbox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="@string/add_vitals_link"
+                            android:textColor="@color/blue_color"
+                            android:onClick="addVitals"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/check_sbp_pulse"
+                        android:background="@color/lighter_blue"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Is SBP less than 90 mmHg or pulse greater than 110 per minute or heavy bleeding?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio15_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="15,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio15_no"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="15,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio15_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="15,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/sbp_pulse_heavy_bleeding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lighter_blue"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/row_line15"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Is patient having respiratory distress or SpO2 less than 94?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio16_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="16,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio16_no"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="16,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio16_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="16,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+                <LinearLayout
+                    android:id="@+id/action_prompt_new_17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/caution_new_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_error2" />
+
+                    <TextView
+                        android:id="@+id/action_prompt_new_17_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="3dp"
+                        android:text=" If not yet done, Consider giving 5 liters of oxygen if respiratory distress or SpO2 less than 94?"
+                        android:textColor="@color/red" />
+
+                </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt_new_17_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt17"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt17_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Insert IV, give 1 litre bolus crystalloid (LR or NS) then reassess (see give fluids rapidly)"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt17_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt18"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt18_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Keep warm (cover)"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt18_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line16"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row18"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="If more than 20 weeks pregnancy, place on her left side"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio18_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="18,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio18_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="18,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio18_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="18,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <View
+                    android:id="@+id/row_line18"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Is there anaphylaxis?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio19_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="19,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio19_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="19,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio19_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="19,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt19_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give 1:1000 epinephrine (adrenaline) IM – 0.5 ml if 50 kg or above, 0.4 ml if 40 kg, 0.3 if 30 kg"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt19_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line19"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/section_three">
+                <TextView
+                    android:id="@+id/section_three_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Disability"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="23sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/label3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Altered level consciousness or Convulsing or New loss of function(stroke)"
+                    android:textColor="@color/red"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/section_prompt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/section_prompt3_imageview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/section_prompt3_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Consider checking pupils if not yet done"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/section_prompt3_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt20_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Check AVPU (GCS in trauma)"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt20_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt21_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Check serum glucose"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt21_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt22_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Check for head trauma"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt22_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_new"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt_new_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Protect from fall or injury"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt_new_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt_new1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_new1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt_new1_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Consider Managing airway and assisting into recovery position if not yet done"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt_new1_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_18"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt23_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Call for help but do not leave patient alone"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt23_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row24"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="If slow breathing with small pupils?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio24_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="24,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio24_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="24,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio24_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="24,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_36"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt24_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Action Required: Give naloxone for opiate overdose"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt24_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_new3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt25_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give glucose (if blood glucose is low or unknown)."
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt25_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row25"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Give glucose (if blood glucose is low or unknown)"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio25_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="25,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio25_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="25,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio25_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="25,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <View
+                    android:id="@+id/row_line25"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row26"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Do you suspect chronic alcoholism?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio26_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="26,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio26_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="26,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio26_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="26,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt26"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_38"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt26_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give thiamine and glucose"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt26_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt27"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt27_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Check (then monitor and record) level of consciousness on AVPU scale"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <CheckBox
+                            android:id="@+id/action_prompt27_checkbox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="@string/add_vitals_link"
+                            android:textColor="@color/blue_color"
+                            android:onClick="addVitals"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/avpu_measured"
+                        android:background="@color/lighter_blue"
+                        android:gravity="center"
+                        android:padding="5dp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line27"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/label4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="If convulsing"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/action_prompt9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt9_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Give diazepam IV or rectally"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt9_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="If convulsing in second half of pregnancy or post-partum up to one week, give magnesium sulfate rather than diazepam"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio10_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="10,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio10_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="10,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio10_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="10,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt11_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text=" Consider Checking and recording SBP, pulse, RR, temperature if not yet done"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <CheckBox
+                            android:id="@+id/action_prompt11_checkbox"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:text="@string/add_vitals_link"
+                            android:textColor="@color/blue_color"
+                            android:onClick="addVitals"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Have convulsions continued after 10 minutes?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio13_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="13,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio13_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="13,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio13_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="13,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt12_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Action Required: Continue to monitor airway, breathing, circulation."
+                            android:paddingStart="3dp"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt12_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/action_prompt13_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Action Required: Give second dose diazepam (unless pregnant/post-partum)"
+                        android:textColor="@color/red" />
+
+                    <CheckBox
+                        android:id="@+id/action_prompt13_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/action_prompt14_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Action Required: Consult district clinician to start phenytoin"
+                        android:textColor="@color/red" />
+
+                    <CheckBox
+                        android:id="@+id/action_prompt14_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/pinpoint_pupils_rr_and_spo2_naloxone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lighter_blue"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/row_line24"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row_new"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=" if critically ill"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio_new_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="24,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio_new_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="24,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio2_new_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="24,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+                <LinearLayout
+                    android:id="@+id/action_prompt_new2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_new2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt_new2_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Action Required: Give oxygen 5 10-15 litres/min"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt_new2_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+            </TableLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/section_four">
+
+                <TextView
+                    android:id="@+id/section_four_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Expose and Evaluate for Life Threats"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="23sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/action_prompt34"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt34_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Nothing by mouth (NPO)"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt34_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_40"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt33_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give IV fluids"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt33_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line34"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row29"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Do you suspect surgical abdomen"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio29_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="29,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio29_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="29,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio29_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="29,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt29"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_39"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt29_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Call for help; send blood for type and cross match"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt29_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line29"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row28"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="If early pregnancy possible, consider ectopic and check rapid pregnancy test"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio28_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="28,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio28_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="28,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio28_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="28,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <View
+                    android:id="@+id/row_line28"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/action_prompt31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt31_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Empirical antibiotics IV/IM"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt31_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt30_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Treat pain"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt30_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line31"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row32"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Give oxygen if respiratory distress or SpO2 less than 90"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio32_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="32,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio32_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="32,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio32_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="32,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/spo2_oxygen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lighter_blue"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:visibility="gone" />
+
+                <View
+                    android:id="@+id/row_line32"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row33"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Give IV fluids"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio33_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="33,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio33_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="33,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio33_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="33,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/row35"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="If severe headache with stiff neck and fever, consider meningitis"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio35_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="35,2"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/radio35_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="35,1"
+                            android:text="No" />
+
+                        <RadioButton
+                            android:id="@+id/radio35_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="35,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt36"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt36_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give IV antibiotics (call clinician to do LP first if can do within 15 minutes)"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt36_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt37_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give appropriate IV or IM antimalarials if in malaria endemic area or travel and RDT or blood smear positive"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt37_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt38"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt38_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give aspirin (300 mg, chewed)"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt38_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line38"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row39"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Is SpO2 less than 90 or respiratory distress present?"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio39_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="39,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio39_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="39,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio39_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="39,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt39"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_37"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt39_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give oxygen"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt39_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/spo2_oxygen1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lighter_blue"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/action_prompt40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt40_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Insert IV – if no signs of shock, give fluids slowly at a keep-open rate"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt40_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt41"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_27"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt41_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Give morphine for pain"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt41_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt42"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt42_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Do ECG. Call district clinician for help"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt42_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/action_prompt43"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt43_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Manage airway"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt43_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt44"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_30"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt44_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Consider inhalational burn"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt44_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line44"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+
+                <TableRow
+                    android:id="@+id/row45"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Give oxygen if SpO2 less than 90 or respiratory distress"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio45_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="45,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio45_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="45,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio45_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="45,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/spo2_oxygen2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lighter_blue"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/action_prompt46"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_31"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt46_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Insert IV; give fluids rapidly"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt46_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt47"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt47_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Treat pain"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt47_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt48"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt48_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Apply clean sterile bandages"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt48_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <TableRow
+                    android:id="@+id/row50"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Give oxygen if SpO2 less than 90 or respiratory distress"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <RadioGroup
+                        style="@style/RadioGroupStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/radio50_yes"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="50,2"
+                            android:text="YES" />
+
+                        <RadioButton
+                            android:id="@+id/radio50_no"
+                            style="@style/MiddleRadioStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="50,1"
+                            android:text="NO" />
+
+                        <RadioButton
+                            android:id="@+id/radio50_not"
+                            style="@style/RadioButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:onClick="saveSelectedPromptOption"
+                            android:tag="50,3"
+                            android:text="N/A" />
+                    </RadioGroup>
+                </TableRow>
+
+                <TextView
+                    android:id="@+id/spo2_oxygen3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lighter_blue"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/action_prompt52"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_41"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt52_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Immobilize extremity"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt52_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt51"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_35"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt51_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Insert IV; give fluids rapidly"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt51_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/action_prompt49"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/beige_red"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/caution_34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_error2" />
+
+                        <TextView
+                            android:id="@+id/action_prompt49_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="3dp"
+                            android:text="Treat pain"
+                            android:textColor="@color/red" />
+
+                    </LinearLayout>
+
+                    <CheckBox
+                        android:id="@+id/action_prompt49_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Done"
+                        android:textColor="@color/red"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/row_line49"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:visibility="gone" />
+            </TableLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

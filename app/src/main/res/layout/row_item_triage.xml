@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/triage_text_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/triage_status_row"
+                android:layout_gravity="center"
+                android:src="@drawable/circle_yellow"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary" />
+
+
+</LinearLayout>

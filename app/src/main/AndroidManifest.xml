@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="tech.streamlinehealth.esims">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/esims_logo"
+        android:name=".helpers.Sims"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".patients.agewell.BloodPressureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patients.agewell.TemperatureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patients.agewell.PulseOximetryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".patients.agewell.ChooseTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".workload_assessment.RatingWorkloadActivity"
+            android:label="Rate workload sources" />
+        <activity
+            android:name=".workload_assessment.RatingScaleActivity"
+            android:label="Rate Task Experience" />
+        <activity
+            android:name=".clinical_data.EditTaskActivity"
+            android:label="Edit Task" />
+        <activity
+            android:name=".clinical_data.ViewTasksActivity"
+            android:label="Tasks List" />
+        <activity
+            android:name=".clinical_data.AddTaskActivity"
+            android:label="Add Task" />
+        <activity
+            android:name=".workload_assessment.ViewTasksListsActivity"
+            android:label="Tasks List" />
+        <activity
+            android:name=".users.DisclaimerActivity"
+            android:label="Disclaimer" />
+        <activity
+            android:name=".patients.CompletedActionsTimelineActivity"
+            android:label="Actions Timeline" />
+        <activity
+            android:name=".patients.triage.PatientTriageHomeActivity"
+            android:label="Patient Triage"
+            android:noHistory="true" />
+        <activity
+            android:name=".clinical_data.EditOccupationActivity"
+            android:label="Edit Occupation"
+            android:noHistory="true" />
+        <activity
+            android:name=".clinical_data.ViewOccupationsActivity"
+            android:label="Occupations"
+            android:noHistory="true" />
+        <activity
+            android:name=".clinical_data.AddOccupationActivity"
+            android:label="Add Occupation"
+            android:noHistory="true" />
+        <activity
+            android:name=".clinical_data.EditWardActivity"
+            android:label="Edit Ward"
+            android:noHistory="true" />
+        <activity
+            android:name=".clinical_data.ViewWardsActivity"
+            android:label="Wards"
+            android:noHistory="true" />
+        <activity
+            android:name=".clinical_data.AddWardActivity"
+            android:label="Add Ward"
+            android:noHistory="true" />
+        <activity
+            android:name=".clinical_data.ViewClinicalDataActivity"
+            android:label="Clinical Data" />
+        <activity
+            android:name=".patients.AddPatientEpisodeActivity"
+            android:label="Patient Admission" />
+        <activity
+            android:name=".patients.PatientEpisodesActivity"
+            android:label="Patient Episodes" />
+        <activity
+            android:name=".patients.ViewPatientDetailsActivity"
+            android:label="Patient Demographics" />
+        <activity
+            android:name=".users.EditUserActivity"
+            android:label="Edit User" />
+        <activity
+            android:name=".users.ViewUserDetailsActivity"
+            android:label="User Details" />
+        <activity
+            android:name=".patients.ReassignActivity"
+            android:label="Reassign Patient" />
+        <activity
+            android:name=".patients.AssignPatientActivity"
+            android:label="Assign Patient" />
+        <activity
+            android:name=".users.ViewUsersActivity"
+            android:label="Active Users" />
+        <activity
+            android:name=".users.CreateUserActivity"
+            android:label="Register" />
+        <activity
+            android:name=".patients.triage.PatientTriageDetailsActivity"
+            android:label="Triage Details" />
+        <activity
+            android:name=".patients.PatientHomeActivity"
+            android:label="Patient Home" />
+        <activity
+            android:name=".patients.ViewPatientsActivity"
+            android:label="Patients" />
+        <activity
+            android:name=".auth.LoginActivity"
+            android:noHistory="true"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".reports.PatientVitalsReportActivity"
+            android:label="Patient Vitals Report" />
+        <activity
+            android:name=".patients.ViewPatientActionsActivity"
+            android:label="Patient Actions" />
+        <activity
+            android:name=".patients.ViewPatientVitalsActivity"
+            android:label="Patient Vitals" />
+        <activity
+            android:name=".patients.SelectDiagnosisActivity"
+            android:label="Select Diagnosis" />
+        <activity
+            android:name=".patients.AddPatientActivity"
+            android:label="Add Patient"
+            android:noHistory="true" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".patients.EditPatientVitalsActivity"
+            android:label="Edit Vitals" />
+        <activity
+            android:name=".auth.ForgotPassword"
+            android:label="Forgot Password" />
+        <activity
+            android:name=".auth.ResetPassword"
+            android:label="Reset Password" />
+
+        <service android:name=".helpers.FetchPatientActionsService"
+            android:enabled="true"
+            android:exported="false"/>
+    </application>
+
+</manifest>

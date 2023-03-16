@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/curved_on_top_white_view"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="90dp"
+    android:maxHeight="300dp"
+    tools:ignore="HardcodedText, RtlSymmetry"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:id="@+id/bottomSheetLayoutVitalsGraph">
+
+    <ImageView
+        android:id="@+id/icon_heart_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_heart_rate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vitals_report_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="0.8"
+        android:paddingStart="10dp"
+        android:text="Heart Rate"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/icon_heart_rate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/view_btn"
+        android:layout_width="97dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_view_bg"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="View"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/vitals_report_label"
+        android:onClick="onClick"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/dark_gray"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <ImageView
+        android:id="@+id/icon_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_temperature"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_btn"
+        />
+
+    <TextView
+        android:id="@+id/temp_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="0.8"
+        android:paddingStart="10dp"
+        android:text="Temperature"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/icon_temp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn"
+        />
+
+    <Button
+        android:id="@+id/view_btn2"
+        android:layout_width="97dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_view_bg"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="View"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/temp_label"
+        android:onClick="onClick"
+        app:layout_constraintTop_toBottomOf="@id/view_btn" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/dark_gray"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn2"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <ImageView
+        android:id="@+id/icon_oxy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_oxygen"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_btn2"
+        />
+
+    <TextView
+        android:id="@+id/oxy_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="0.8"
+        android:paddingStart="10dp"
+        android:text="Oxygen Saturation"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/icon_oxy"
+        app:layout_constraintTop_toBottomOf="@id/view_btn2"
+        />
+
+    <Button
+        android:id="@+id/view_btn3"
+        android:layout_width="97dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_view_bg"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="View"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"
+        app:layout_constraintLeft_toRightOf="@id/temp_label"
+        app:layout_constraintTop_toBottomOf="@id/view_btn2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/dark_gray"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn3"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <ImageView
+        android:id="@+id/icon_resp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_respiratory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_btn3"
+        />
+
+
+    <TextView
+        android:id="@+id/resp_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="0.8"
+        android:paddingStart="10dp"
+        android:text="Respiratory Rate"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/icon_resp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn3"
+        />
+
+    <Button
+        android:id="@+id/view_btn4"
+        android:layout_width="97dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_view_bg"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="View"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"
+        app:layout_constraintLeft_toRightOf="@id/temp_label"
+        app:layout_constraintTop_toBottomOf="@id/view_btn3" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/dark_gray"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn4"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <ImageView
+        android:id="@+id/icon_sbp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_blood_pressure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view_btn4"
+        />
+
+    <TextView
+        android:id="@+id/sbp_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="0.8"
+        android:paddingStart="10dp"
+        android:text="Blood Pressure"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@id/icon_sbp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn4"
+        />
+
+    <Button
+        android:id="@+id/view_btn5"
+        android:layout_width="97dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/button_view_bg"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="View"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="onClick"
+        app:layout_constraintLeft_toRightOf="@id/sbp_label"
+        app:layout_constraintTop_toBottomOf="@id/view_btn4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/dark_gray"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/view_btn5"
+        tools:layout_editor_absoluteX="15dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

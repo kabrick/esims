@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    tools:context=".patients.triage.PatientTriageHomeActivity"
+    tools:ignore="HardcodedText,ContentDescription,TooManyViews">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parent_trans_zero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/add_2_icon" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.85"
+                            android:textSize="14sp"
+                            android:text="Infection, Prevention and Control"
+                            android:textColor="@color/white"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dropdown_view_zero"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parent_trans_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="15dp"
+                        android:onClick="tap"
+                        >
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@android:color/transparent"
+                            android:onClick="transitionLayoutOne"
+                            android:src="@drawable/add_2_icon" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.85"
+                            android:text="Airway and Breathing"
+                            android:textColor="@color/white"
+                            android:onClick="transitionLayoutOne"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_one"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayPromptsBottomSheet"
+                            android:tag="1"
+                            android:src="@drawable/rx3"
+                            android:visibility="gone"
+                            app:tint="@color/white" />
+
+                        <View
+                            android:id="@+id/emergency_signs_number_one_trauma_line"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_one_trauma_image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayTraumaBottomSheet"
+                            android:src="@drawable/trauma"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dropdown_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:layout_marginTop="10dp"
+                            android:id="@+id/emergency_check1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Appears Obstructed"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Central Cyanosis"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Severe Respiratory Distress"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/trauma_check_airway"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Head or neck trauma present"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check_none"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:text="None"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parent_trans_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/circulation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:onClick="transitionLayoutTwo"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/add_2_icon" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.85"
+                            android:onClick="transitionLayoutTwo"
+                            android:text="Circulation (Shock or Heavy Bleeding)"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_two"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayPromptsBottomSheet"
+                            android:tag="2"
+                            android:src="@drawable/rx3"
+                            android:visibility="gone"
+                            app:tint="@color/white" />
+
+                        <View
+                            android:id="@+id/emergency_signs_number_two_trauma_line"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_two_trauma_image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayTraumaBottomSheet"
+                            android:src="@drawable/trauma"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dropdown_view_circulation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:visibility="gone">
+
+
+                        <CheckBox
+                            android:id="@+id/emergency_check4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Weak or fast pulse"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Capillary refill longer than three seconds"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Heavy bleeding from any site"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/trauma_check_circulation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Severe trauma"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check_none_two"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:text="None"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parent_trans_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@android:color/transparent"
+                            android:onClick="transitionLayoutThree"
+                            android:src="@drawable/add_2_icon" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.85"
+                            android:text="Disability"
+                            android:onClick="transitionLayoutThree"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_three"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayPromptsBottomSheet"
+                            android:tag="3"
+                            android:src="@drawable/rx3"
+                            android:visibility="gone"
+                            app:tint="@color/white" />
+
+                        <View
+                            android:id="@+id/emergency_signs_number_three_trauma_line"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_three_trauma_image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayTraumaBottomSheet"
+                            android:src="@drawable/trauma"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dropdown_view_disability"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/emergency_check8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Altered level of consciousness"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Convulsing"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="New loss of function (stroke)"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/trauma_check_disability"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Signs of serious head and spine trauma"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check_none_three"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:text="None"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parent_trans_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="15dp">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@android:color/transparent"
+                            android:onClick="transitionLayoutFour"
+                            android:src="@drawable/add_2_icon" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.85"
+                            android:text="Expose and Evaluate for Life Threats"
+                            android:onClick="transitionLayoutFour"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_four"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayPromptsBottomSheet"
+                            android:tag="4"
+                            android:src="@drawable/rx3"
+                            android:visibility="gone"
+                            app:tint="@color/white" />
+
+                        <View
+                            android:id="@+id/emergency_signs_number_four_trauma_line"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.002"
+                            android:background="@color/white"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/emergency_signs_number_four_trauma_image"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.148"
+                            android:gravity="center"
+                            android:onClick="displayTraumaBottomSheet"
+                            android:src="@drawable/trauma"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dropdown_view_life_threats"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:visibility="gone">
+
+                        <CheckBox
+                            android:id="@+id/emergency_check11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does patient have severe abdominal pain?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does the patient have a rigid abdomen?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check19"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does the patient have rebound tenderness?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does patient have severe headache?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does patient have stiff neck?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does patient have trauma to head/neck?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check16"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does patient have new onset chest pain?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does patient have major burn?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check18"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Does patient have snake bite?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/trauma_check_expose1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Trauma with abdominal pain"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/trauma_check_expose2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Trauma with neck pain or possible cervical spine injury"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/trauma_check_expose3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Trauma with chest pain"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/emergency_check_none_four"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="25dp"
+                            android:text="None"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/parent_trans_five"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="20dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        android:orientation="horizontal"
+                        android:padding="15dp"
+                        android:onClick="transitionLayoutFive">
+
+                        <ImageButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/add_2_icon" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.85"
+                            android:text="Priority Signs"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dropdown_view_priority_signs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:padding="5dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="20dp"
+                            android:text="If cough or other signs of respiratory illness, apply source
+    control (use of tissues, handkerchiefs or medical masks) on the patient in the waiting room when
+    coughing or sneezing, and perform hand hygiene. If possible, accommodate patient at least
+    1 meter away from other patients or in a room, and evaluate as soon as possible"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/priority_signs1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Very pale"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Very weak/ill"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Acute visual changes"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Any respiratory distress/complaint of difficulty breathing?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Violent behaviour toward self or others or very agitated?"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bleeding"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Frequent diarrhoea > 5 times a day"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Fractures or dislocations"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Burns"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Bites from rabid animals"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs11"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Poisoning"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Rape/abuse (maintain a high index of suspicion)"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="New extensive rash with peeling and mucous membrane involvement (Stevens-Johnson)"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Acute pain, cough or dyspnea, priapism, or fever in patiet with sickle-cell disease"
+                            android:textSize="12sp" />
+
+                        <CheckBox
+                            android:id="@+id/priority_signs15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Recent fainting"
+                            android:layout_marginBottom="25dp"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/button_bg_2"
+                android:onClick="saveTriageDetails"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/bottom_sheet_triage" />
+
+    <include layout="@layout/bottom_sheet_triage_trauma" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_review_triage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:icon="@drawable/plus"
+        android:text="Review"
+        android:theme="@style/AppTheme.Material"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    android:fillViewport="true"
+    android:focusable="false"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".patients.AddPatientActivity"
+    tools:ignore="LabelFor, AutoFill">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <CheckBox
+                android:id="@+id/if_too_sick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/too_sick_to_answer"
+                android:onClick="onClickCheckBox"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Study No." />
+
+            <EditText
+                android:id="@+id/study_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/msg_date_of_birth" />
+
+            <EditText
+                android:id="@+id/age_range"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/msg_gender" />
+
+            <RadioGroup
+                android:id="@+id/gender"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:checked="false"
+                    android:text="@string/option_female" />
+
+                <RadioButton
+                    android:id="@+id/gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/option_male" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/qn_is_patient_pregnant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/question_is_patient_pregnant"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/patient_pregnant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/weeks_pregnant_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/qn_number_of_weeks_pregnant"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/weeks_pregnant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/msg_referred_from" />
+
+            <EditText
+                android:id="@+id/referred_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:id="@+id/referred_from_name_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Please enter name of facility where patient was referred from"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/referred_from_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/msg_ward" />
+
+            <EditText
+                android:id="@+id/ward"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/msg_patient_admission_date" />
+
+            <EditText
+                android:id="@+id/add_patient_timestamp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:importantForAutofill="no"
+                android:inputType="text" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/register_patient"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_bg_2"
+        android:onClick="registerPatient"
+        android:text="@string/action_save_patient"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>

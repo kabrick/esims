@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    android:orientation="vertical"
+    tools:context=".patients.ViewPatientsActivity">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_active_patients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/rounded_background_white"
+        android:queryHint="Search..." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_active_patients"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollbars="vertical" />
+
+    <TextView
+        android:id="@+id/no_active_patients"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:text="@string/no_patients_available"
+        android:textColor="@color/red"
+        android:textSize="40sp"
+        android:visibility="gone" />
+
+</LinearLayout>

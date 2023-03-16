@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="tech.streamlinehealth.esims.ui.home.HomeFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="tech.streamlinehealth.esims.ui.user.UserFragment"
+        android:label="Account"
+        tools:layout="@layout/fragment_user" />
+
+    <fragment
+        android:id="@+id/nav_analysis"
+        android:name="tech.streamlinehealth.esims.ui.analysis.AnalysisFragment"
+        android:label="Weekly Admission Summary"
+        tools:layout="@layout/fragment_analysis" />
+
+    <fragment
+        android:id="@+id/nav_vital_signs"
+        android:name="tech.streamlinehealth.esims.ui.analysis.VitalsFragment"
+        android:label="Daily Monitoring of vital signs"
+        tools:layout="@layout/fragment_vitals" />
+
+    <fragment
+        android:id="@+id/nav_severe_illness"
+        android:name="tech.streamlinehealth.esims.ui.analysis.SevereIllnessFragment"
+        android:label="Prevalence of severe illness"
+        tools:layout="@layout/fragment_severe_illness" />
+
+    <fragment
+        android:id="@+id/nav_severe_illness_mgt"
+        android:name="tech.streamlinehealth.esims.ui.analysis.SevereIllnessMgtFragment"
+        android:label="Severe illness Management"
+        tools:layout="@layout/fragment_severe_illness_mgt" />
+
+    <fragment
+        android:id="@+id/nav_patient_outcomes"
+        android:name="tech.streamlinehealth.esims.ui.analysis.PatientOutcomesFragment"
+        android:label="Patient Outcomes"
+        tools:layout="@layout/fragment_patient_outcomes" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="tech.streamlinehealth.esims.ui.settings.SettingFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_setting" />
+
+</navigation>

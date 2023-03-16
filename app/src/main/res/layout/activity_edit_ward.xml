@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".clinical_data.EditWardActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:layout_marginStart="10dp"
+        android:text="@string/ward_name" />
+
+    <EditText
+        android:id="@+id/ward_name"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:inputType="text"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/edit_text_color"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/register_patient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/button_bg_2"
+        android:onClick="save_ward"
+        android:textSize="18sp"
+        android:text="@string/edit_ward"
+        android:textColor="@color/white" />
+
+</LinearLayout>

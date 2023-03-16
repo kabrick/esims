@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/dark_gray"
+    tools:context=".patients.ViewPatientDetailsActivity"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="20dp"
+        android:focusable="false"
+        android:scrollbarStyle="insideInset"
+       >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/details_linear">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Study No."
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/patient_names"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Age Group"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/date_of_birth"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gender_1"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/gender"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ward_1"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ward"
+                    android:layout_marginTop="5dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Patient Admission Time"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timestamp"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/edit_linear"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Study No."
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/patient_names_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:inputType="text"
+                    android:layout_marginTop="5dp"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Age Group"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/date_of_birth_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:inputType="none"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="RtlSymmetry,TextFields" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"
+                    android:layout_marginTop="5dp"/>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/gender_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="10dp"
+                    android:inputType="text"
+                    android:background="@drawable/edit_text_background"
+                    app:ms_hint="-"
+                    app:ms_dropdown_max_height="200dp"
+                    android:textColor="@color/edit_text_color"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Is patient pregnant"
+                    android:layout_marginTop="5dp"/>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/patient_pregnant_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:inputType="text"
+                    android:background="@drawable/edit_text_background"
+                    app:ms_hint="-"
+                    app:ms_dropdown_max_height="200dp"
+                    android:visibility="gone"
+                    android:textColor="@color/edit_text_color"
+                    tools:ignore="RtlSymmetry" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ward"
+                    android:layout_marginTop="5dp"/>
+
+                <com.jaredrummler.materialspinner.MaterialSpinner
+                    android:id="@+id/ward_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:inputType="text"
+                    android:background="@drawable/edit_text_background"
+                    app:ms_hint="-"
+                    app:ms_dropdown_max_height="200dp"
+                    android:textColor="@color/edit_text_color"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/edit_btn"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_bg_2"
+        android:textColor="@color/white"
+        android:onClick="editPatient"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:visibility="gone"
+        android:text="Edit Patient Details" />
+
+    <LinearLayout
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/register_patient"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg_2"
+            android:textColor="@color/white"
+            android:onClick="completeEdit"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/button_bg_2"
+            android:textColor="@color/white"
+            android:onClick="cancelEdit"
+            android:layout_marginRight="20dp"
+            android:text="Cancel" />
+
+    </LinearLayout>
+
+</LinearLayout>

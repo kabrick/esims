@@ -1,0 +1,209 @@
+<resources>
+    <string name="app_name">eSIMS</string>
+    <string name="missing_field">Please fill in this field</string>
+
+    <string name="open_navigation">Open Navigation</string>
+    <string name="close_navigation">Close Navigation</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">User :</string>
+    <string name="nav_header_subtitle">Admin user</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_test">test</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="msg_username">Username</string>
+    <string name="msg_password">Password</string>
+    <string name="msg_sign_in">Log In</string>
+    <string name="msg_forgot_password">Forgot Password?</string>
+    <string name="msg_create_account">Don\'t have an account?</string>
+    <string name="msg_patient_details">Patient Details</string>
+    <string name="msg_ward">Ward *</string>
+    <string name="msg_referred_from">Referred From</string>
+    <string name="msg_patient_admission_date">Patient Admission Date</string>
+    <string name="msg_create_patient_episode">Create Patient Episode</string>
+    <string name="title_edit_occupation">Occupation *</string>
+    <string name="action_save_occupation">Save Occupation</string>
+    <string name="title_patient_enrollment">Patient Enrollment</string>
+    <string name="msg_first_name">First Name *</string>
+    <string name="msg_last_name">Last Name *</string>
+    <string name="msg_date_of_birth">Age *</string>
+    <string name="msg_gender">Gender</string>
+    <string name="option_female">Female</string>
+    <string name="option_male">Male</string>
+    <string name="msg_marital_status">Marital Status</string>
+    <string name="msg_occupation">Occupation</string>
+    <string name="msg_referred_from2">Referred From</string>
+    <string name="question_is_patient_pregnant">Is patient pregnant</string>
+    <string name="qn_number_of_weeks_pregnant">Number of Weeks Pregnant</string>
+    <string name="msg_district">District</string>
+    <string name="msg_ward2">Ward</string>
+    <string name="msg_patient_admission_date2">Patient Admission Date</string>
+    <string name="action_save_patient">Save Patient</string>
+    <string name="msg_ward_name">Ward Name *</string>
+    <string name="action_save_ward">Save Ward</string>
+    <string name="user_first_name">First Name *</string>
+    <string name="user_last_name">Last Name *</string>
+    <string name="user_phone_number">Phone Number</string>
+    <string name="user_email_address">Email Address</string>
+    <string name="user_username">Username *</string>
+    <string name="user_password">Password *</string>
+    <string name="user_secret_pin">Secret Pin *</string>
+    <string name="action_save_user">Submit</string>
+    <string name="users">Users</string>
+    <string name="clinical_data">Clinical Data</string>
+    <string name="search_patients">Search Patients</string>
+    <string name="new_patient">New Patient</string>
+    <string name="occupation_name">Occupation Name</string>
+    <string name="edit_occupation">Edit Occupation</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="username">Username</string>
+    <string name="secret_pin">Secret Pin</string>
+    <string name="action_update_user">Update User</string>
+    <string name="ward_name">Ward Name</string>
+    <string name="edit_ward">Edit Ward</string>
+    <string name="patient_has_no_previous_triage_record">Patient has no previous triage record</string>
+    <string name="choose_a_patient_below">Choose a patient below</string>
+    <string name="view_patient_vitals_trends">Patient Vitals Trends</string>
+    <string name="no_patients_available">No patients available</string>
+    <string name="my_patients">My Patients</string>
+    <string name="you_have_no_assigned_patients">You have no assigned patients</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="patient_has_no_previous_triage_record2">Patient has no previous triage record</string>
+    <string name="systolic_blood_pressure">Systolic Blood Pressure</string>
+    <string name="diastolic_blood_pressure">Diastolic Blood Pressure</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="respiratory_rate">Respiratory Rate</string>
+    <string name="temperature_celsius">Temperature (celsius)</string>
+    <string name="oxygen_saturation">Oxygen Saturation</string>
+    <string name="avpu_scale">AVPU Scale</string>
+    <string name="time_when_vitals_taken">Time When Vitals Taken</string>
+    <string name="episode_created">Episode Created</string>
+    <string name="emergency_prompts">Emergency Prompts</string>
+    <string name="patient_names_">Patient Names </string>
+    <string name="date_of_birth_">Date of Birth </string>
+    <string name="patient_names_1">Patient Names</string>
+    <string name="date_of_birth_1">Date of Birth</string>
+    <string name="gender_1">Gender</string>
+    <string name="marital_status_1">Marital Status</string>
+    <string name="occupation_1">Occupation</string>
+    <string name="ward_1">Ward</string>
+    <string name="admission_diagnosis_1">Admission Diagnosis</string>
+    <string name="save_triage">Save</string>
+    <string name="priority_signs">Priority Signs</string>
+    <string name="very_pale">Very pale</string>
+    <string name="very_weak_ill">Very weak/ill</string>
+    <string name="acute_visual_changes">Acute visual changes</string>
+    <string name="any_respiratory_distress_complaint_of_difficulty_breathing">Any respiratory distress/complaint of difficulty breathing</string>
+    <string name="violent_behaviour_toward_self_or_others_or_very_agitated">Violent behaviour toward self or others or very agitated</string>
+    <string name="bleeding">Bleeding</string>
+    <string name="frequent_diarrhoea_5_times_a_day"><![CDATA[Frequent diarrhoea > 5 times a day]]></string>
+    <string name="fractures_or_dislocations">Fractures or dislocations</string>
+    <string name="burns">Burns</string>
+    <string name="bites_from_rabid_animals">Bites from rabid animals</string>
+    <string name="poisoning">Poisoning</string>
+    <string name="rape_abuse_maintain_a_high_index_of_suspicion">Rape/abuse (maintain a high index of suspicion)</string>
+    <string name="new_extensive_rash_with_peeling_and_mucous_membrane_involvement_stevens_johnson">New extensive rash with peeling and mucous membrane involvement (Stevens-Johnson)</string>
+    <string name="acute_pain_cough_or_dyspnea_priapism_or_fever_in_patiet_with_sickle_cell_disease">Acute pain, cough or dyspnea, priapism, or fever in patiet with sickle-cell disease</string>
+    <string name="recent_fainting">Recent fainting</string>
+    <string name="save">Save</string>
+    <string name="add_vitals_link"><u>Add Vitals</u></string>
+    <string name="prevalence_of_severe_illness">Prevalence of severe illness</string>
+    <string name="wk1"> Wk1: \u0020</string>
+    <string name="wk2"> Wk2: \u0020</string>
+    <string name="wk3"> Wk3: \u0020</string>
+    <string name="wk4">Wk4: \u0020</string>
+    <string name="wk1_label">Wk1</string>
+    <string name="wk2_label">Wk2</string>
+    <string name="wk3_label">Wk3</string>
+    <string name="wk4_label">Wk4</string>
+    <string name="statistical">Statistical</string>
+    <string name="graphical">Graphical</string>
+    <string name="new_password">New Password *</string>
+    <string name="confirm_password">Confirm Password *</string>
+    <string name="home">Home</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="my_account">My Account</string>
+    <string name="settings">Settings</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="weekly_admission_summary">Weekly Admission summary</string>
+    <string name="daily_monitoring_of_vitals">Daily monitoring of vitals</string>
+    <string name="prevelance_of_severe_illness">Prevelance of severe illness</string>
+    <string name="management_of_severe_illness">Management of severe illness</string>
+    <string name="patient_outcomes">Patient outcomes</string>
+    <string name="log_out">Log out</string>
+    <string name="workload_assessment_tool">Workload Assessment Tool</string>
+
+    <string name="mental_demand_subtext">
+        How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering,
+        looking, searching, etc)? Was the task easy or demanding, simple or complex, exacting or forgiving?
+    </string>
+
+    <string name="physical_demand_subtext">
+        How much physical activity was required (e.g. pushing, pulling, turning, controlling, activating, etc)?
+        Was the task easy or demanding, slow or brisk, slack or strenuous, restful or laborious?
+    </string>
+
+    <string name="temporal_demand_subtext">
+        How much time pressure did you feel due to the rate of pace at which the tasks or task elements occurred?
+        Was the pace slow and leisurely or rapid and frantic?
+    </string>
+
+    <string name="performance_subtext">
+        How successful do you think you were in accomplishing the goals of the task set by the experimenter (or
+        yourself)? How satisfied were you with your performance in accomplishing these goals
+    </string>
+
+    <string name="effort_subtext">
+        How hard did you have to work (mentally and physically) to accomplish your level of performance
+    </string>
+
+    <string name="frustration_subtext">
+        How insecure, discouraged, irritated, stressed and annoyed versus secure, gratified, content, relaxed
+        and complacent did you feel during the task?
+    </string>
+
+    <string name="mental_demand_bold">
+        <b>Mental Demand: </b> How much mental and perceptual activity was required (e.g. thinking, deciding, calculating, remembering,
+        looking, searching, etc)? Was the task easy or demanding, simple or complex, exacting or forgiving?
+    </string>
+
+    <string name="physical_demand_bold">
+        <b>Physical Demand: </b> How much physical activity was required (e.g. pushing, pulling, turning, controlling, activating, etc)?
+        Was the task easy or demanding, slow or brisk, slack or strenuous, restful or laborious?
+    </string>
+
+    <string name="temporal_demand_bold">
+        <b>Temporal Demand: </b> How much time pressure did you feel due to the rate of pace at which the tasks or task elements occurred?
+        Was the pace slow and leisurely or rapid and frantic?
+    </string>
+
+    <string name="performance_bold">
+        <b>Performance: </b> How successful do you think you were in accomplishing the goals of the task set by the experimenter (or
+        yourself)? How satisfied were you with your performance in accomplishing these goals
+    </string>
+
+    <string name="effort_bold">
+        <b>Effort: </b> How hard did you have to work (mentally and physically) to accomplish your level of performance
+    </string>
+
+    <string name="frustration_bold">
+        <b>Frustration: </b> How insecure, discouraged, irritated, stressed and annoyed versus secure, gratified, content, relaxed
+        and complacent did you feel during the task?
+    </string>
+    <string name="too_sick_to_answer">Too sick to answer</string>
+    <string name="add_vitals">Add Vitals</string>
+</resources>

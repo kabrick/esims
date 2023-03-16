@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "522902750156",
+    "project_id": "esims-project",
+    "storage_bucket": "esims-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522902750156:android:ac3a268c183d4b655c1369",
+        "android_client_info": {
+          "package_name": "tech.streamlinehealth.esims"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522902750156-bfmiuru9jlb1u4mcheob7tgvak9lh5o7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQENlM1fn8XfyET6vZSH--VwH3_p9nNC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522902750156-bfmiuru9jlb1u4mcheob7tgvak9lh5o7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

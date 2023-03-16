@@ -1,0 +1,2127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    android:orientation="vertical"
+    tools:context=".patients.ViewPatientActionsActivity"
+    tools:ignore="HardcodedText">
+
+    <LinearLayout
+        android:id="@+id/patient_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_bg_2"
+        android:backgroundTint="@color/white"
+        android:orientation="horizontal"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/patient_profile_picture"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/patient_info_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="3"
+            android:textColor="@color/colorPrimaryDark"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_bg_2"
+        android:backgroundTint="@color/white"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/no_vitals_recorded"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="No vitals have been recorded for this patient"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/checks_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TableRow
+                        android:id="@+id/row_action"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/textview_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Is Diazepam given?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:visibility="gone" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <RadioButton
+                                android:id="@+id/radio_action_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions1_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Diazepam given"
+                                android:textColor="@color/red" />
+
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions1_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Is Oxygen Started?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action1_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action1_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action1_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions2_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Oxygen started"
+                                android:textColor="@color/red" />
+
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions2_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Is Oxygen saturation measured?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action2_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action2_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action2_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions3_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Oxygen saturation measured"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions3_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Recovery position?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action3_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action3_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action3_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions4_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Recovery Position"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions4_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Is Glucose checked and given?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action4_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action4_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action4_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions5_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Glucose checked and given"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions5_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Is Sp02 measured?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action5_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action5_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action5_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions6_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Sp02 measured"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions6_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Is IV started?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action6_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action6_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action6_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions7_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="IV started"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions7_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="If wheezing, is salbutamol given?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action7_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action7_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action7_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions8_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="If wheezing, salbutamol given"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions8_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Broad Spectrum antibiotics?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action8_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action8_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action8_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions9_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Broad Spectrum antibiotics"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions9_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="If malaria possible, antimalarials given?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action9_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action9_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action9_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions10_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="If malaria possible, antimalarials given"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions10_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Antibiotics given?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action10_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action10_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action10_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution10"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions11_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Antibiotics given"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions11_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="3 litres IV fluids?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action11_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action11_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action11_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution11"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions12_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="3 litres IV fluids"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions12_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Rapid fluids started?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action12_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action12_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action12_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution12"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions13_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Rapid fluids started"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions13_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1000 ml fluid bolus?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action13_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action13_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action13_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution13"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions14_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="1000 ml fluid bolus"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions14_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Treat choking patient?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action14_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action14_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action14_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution14"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions15_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Treat choking patient"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions15_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action15"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="epinephrine (adrenaline)?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action15_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action15_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action15_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution15"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions16_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Give 1:1000 epinephrine (adrenaline) IM – 0.5 ml if 50 kg or above, 0.4 ml if 40 kg, 0.3 if 30 kg"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions16_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Assist Ventilation with bag valve mask?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action16_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action16_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action16_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions17_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Assist Ventilation with bag valve mask"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions17_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Assist Ventilation and give naloxone?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action17_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action17_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action17_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution17"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions18_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Assist Ventilation and give naloxone"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions18_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action18"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Give salbutamol?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action18_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action18_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action18_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution18"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions19_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Give salbutamol"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions19_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Give 5 litres of oxygen?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action19_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action19_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action19_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution19"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions20_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Give 5 litres of oxygen"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions20_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <TableRow
+                        android:id="@+id/row_action20"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Insert IV?"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                        <RadioGroup
+                            style="@style/RadioGroupStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radio_action20_yes"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,1"
+                                android:text="YES" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action20_no"
+                                style="@style/MiddleRadioStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,2"
+                                android:text="NO" />
+
+                            <RadioButton
+                                android:id="@+id/radio_action20_not"
+                                style="@style/RadioButtonStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:onClick="onRadioButtonClicked"
+                                android:tag="1,3"
+                                android:text="N/A" />
+                        </RadioGroup>
+                    </TableRow>
+
+                    <LinearLayout
+                        android:id="@+id/actions21"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/beige_red"
+                        android:orientation="vertical"
+                        android:padding="8dp"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:id="@+id/caution20"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_error2" />
+
+                            <TextView
+                                android:id="@+id/actions21_textview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="3dp"
+                                android:text="Insert IV, give 1 litre bolus crystalloid (LR or NS) then reassess (see give fluids rapidly. Keep warm (cover)"
+                                android:textColor="@color/red" />
+                        </LinearLayout>
+
+                        <CheckBox
+                            android:id="@+id/actions21_checkbox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Done"
+                            android:textColor="@color/red"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+                </TableLayout>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_bg_2"
+                android:onClick="saveData"
+                android:text="Save"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

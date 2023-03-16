@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="View Actions">
+        <menu>
+            <item
+                android:id="@+id/action_active_patients"
+                android:orderInCategory="1"
+                android:title="Active Patients"
+                android:icon="@drawable/ic_being_sick"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_discharged_patients"
+                android:orderInCategory="1"
+                android:title="Discharged Patients"
+                android:icon="@drawable/ic_being_sick"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_deleted_patients"
+                android:orderInCategory="1"
+                android:title="Deleted Patients"
+                android:icon="@drawable/ic_being_sick"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_choose_ward"
+                android:orderInCategory="1"
+                android:title="By Ward"
+                android:icon="@drawable/ic_ward"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_choose_severity"
+                android:orderInCategory="2"
+                android:title="By Severity"
+                android:icon="@drawable/ic_severity"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_choose_sex"
+                android:orderInCategory="3"
+                android:title="By Gender"
+                android:icon="@drawable/ic_gender"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/action_choose_doctor"
+                android:orderInCategory="4"
+                android:title="By In-Charge"
+                android:icon="@drawable/ic_in_charge"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+
+</menu>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    tools:context=".reports.PatientVitalsReportActivity"
+    tools:ignore="HardcodedText, NestedWeights, RtlSymmetry">
+
+    <LinearLayout
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="100dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:orientation="horizontal"
+            android:background="@drawable/button_bg_2"
+            android:backgroundTint="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:paddingTop="10dp">
+
+            <ImageView
+                android:id="@+id/patient_profile_picture"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:src="@drawable/avatar" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:layout_weight="3"
+                android:textColor="@color/colorPrimaryDark"
+                android:id="@+id/patient_info_text"
+                android:layout_marginBottom="5dp"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_marginEnd="5dp"
+            android:background="@color/white" >
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/chart_blood_pressure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/chart_heart_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/chart_resp_rate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/chart_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/chart_spo2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/bottom_sheet_patient_vitals_report" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

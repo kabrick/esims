@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_dashboard"
+        android:title="Dashboard"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_details_patient"
+        android:title="Patient Demographic"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_assign_patient"
+        android:title="Assign Patient To Doctor"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_transfer_patient"
+        android:title="Transfer Patient"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_discharge_patient"
+        android:title="Discharge Patient"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_deactivate_patient"
+        android:title="Delete Patient"
+        app:showAsAction="never" />
+
+</menu>
